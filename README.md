@@ -47,7 +47,7 @@ int main(void)
 
 ## 🌈 À propos de l'auteur
 
-👨‍💻 Ce projet a été réalisé dans le cadre des cursus **42** par [Ton Nom] ❤️. Toujours prêt à répondre à vos questions ! 🎉
+👨‍💻 Ce projet a été réalisé dans le cadre des cursus **42** par [mbah] ❤️. Toujours prêt à répondre à vos questions ! 🎉
 
 🎉 **Merci d’avoir lu ce README !** Prends du plaisir à coder **get_next_line** et que la mémoire soit avec toi. 💾🔥
 
