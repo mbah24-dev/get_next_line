@@ -16,3 +16,38 @@ Bienvenue dans le dépôt **get_next_line**, une implémentation élégante et r
 
 ```c
 char *get_next_line(int fd);
+```
+---
+## 🌟 Exemple d’utilisation
+
+Voici un exemple simple pour illustrer l’utilisation de **get_next_line** ! 🎉
+
+```c
+#include <fcntl.h>
+#include <stdio.h>
+#include "get_next_line.h"
+
+int main(void)
+{
+    int     fd;
+    char    *line;
+
+    fd = open("example.txt", O_RDONLY);
+    if (fd == -1)
+        return (1);
+    while ((line = get_next_line(fd)) != NULL)
+    {
+        printf("Ligne lue : %s", line);
+        free(line);
+    }
+    close(fd);
+    return (0);
+}
+```
+
+## 🌈 À propos de l'auteur
+
+👨‍💻 Ce projet a été réalisé dans le cadre des cursus **42** par [Ton Nom] ❤️. Toujours prêt à répondre à vos questions ! 🎉
+
+🎉 **Merci d’avoir lu ce README !** Prends du plaisir à coder **get_next_line** et que la mémoire soit avec toi. 💾🔥
+
