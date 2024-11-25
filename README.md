@@ -1,5 +1,9 @@
 # 📜 **get_next_line**  
 
+<p align="center">
+  <img src="https://github.com/mbah24-dev/mbah24-dev/blob/main/42_badges/get_next_linee.png" alt="GNL 42 project badge"/>
+</p>
+
 Bienvenue dans le dépôt **get_next_line**, une implémentation élégante et robuste de la fonction `get_next_line` 🧵. Ce projet est un incontournable de l'école 42, conçu pour lire ligne par ligne depuis un fichier ou une entrée standard. 🌟
 
 ---
