@@ -48,7 +48,7 @@ int main(void)
     return (0);
 }
 ```
-
+ 
 ## 🌈 À propos de l'auteur
 
 👨‍💻 Ce projet a été réalisé dans le cadre des cursus **42** par [mbah] ❤️. Toujours prêt à répondre à vos questions ! 🎉
