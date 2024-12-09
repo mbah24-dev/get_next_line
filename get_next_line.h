@@ -6,7 +6,7 @@
 /*   By: mbah <mbah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 13:59:16 by mbah              #+#    #+#             */
-/*   Updated: 2024/12/08 16:47:57 by mbah             ###   ########.fr       */
+/*   Updated: 2024/12/09 20:36:12 by mbah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
-# if BUFFER_SIZE >= 9223372036854775807 //max d'un long (64bits)
-#  undef BUFFER_SIZE //annule la definition 
-#  define BUFFER_SIZE 0 // redefinie a 0 pour indiquer une erreur
+# if BUFFER_SIZE >= 9223372036854775807
+#  undef BUFFER_SIZE 
+#  define BUFFER_SIZE 0
 # endif
 
 char	*get_next_line(int fd);
