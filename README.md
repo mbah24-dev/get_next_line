@@ -27,24 +27,50 @@ char *get_next_line(int fd);
 Voici un exemple simple pour illustrer l’utilisation de **get_next_line** ! 🎉
 
 ```c
-#include <fcntl.h>
 #include <stdio.h>
-#include "get_next_line.h"
+#include <stdlib.h>
+#include <fcntl.h>
+#include "../get_next_line_bonus.h"
 
-int main(void)
-{
-    int     fd;
-    char    *line;
-
-    fd = open("example.txt", O_RDONLY);
-    if (fd == -1)
+int main(int argc, char **argv) {
+    if (argc < 2) {
+        printf("Usage: %s file1 ...\n", argv[0]);
         return (1);
-    while ((line = get_next_line(fd)) != NULL)
-    {
-        printf("Ligne lue : %s", line);
-        free(line);
     }
-    close(fd);
+
+    int fds[argc - 1];
+    char *line;
+    int finished = 0;
+    int i;
+
+    // Ouvrir les fichiers
+    for (i = 1; i < argc; i++) {
+        fds[i - 1] = open(argv[i], O_RDONLY);
+        if (fds[i - 1] < 0) {
+            perror("Error opening file");
+            return (1);
+        }
+    }
+
+    printf("Reading files simultaneously:\n");
+    while (!finished) {
+        finished = 1;
+        for (i = 0; i < argc - 1; i++) {
+            if (fds[i] != -1) { // Si le fichier n'est pas encore terminé
+                line = get_next_line(fds[i]);
+                if (line) {
+                    printf("File %d: %s", i + 1, line);
+                    free(line);
+                    finished = 0;
+                } else {
+                    close(fds[i]);
+                    fds[i] = -1; 
+                }
+            }
+        }
+    }
+
+    printf("Done reading all files.\n");
     return (0);
 }
 ```
