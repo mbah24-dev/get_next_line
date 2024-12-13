@@ -43,7 +43,6 @@ char *get_next_line(int fd);
 - get_next_line_bonus.c et get_next_line_utils_bonus.c : Implémentation pour la version bonus.
 - get_next_line.h : Prototype de la fonction principale.
 - get_next_line_bonus.h : Header spécifique à la version bonus.
-- 
 ---
 ## 🌟 Exemple d’utilisation
 
