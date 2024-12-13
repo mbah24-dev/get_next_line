@@ -13,14 +13,37 @@ Bienvenue dans le dépôt **get_next_line**, une implémentation élégante et r
 - 💾 Gestion optimisée de la mémoire avec un **buffer** configurable.
 - 🚀 Compatibilité avec des fichiers, des sockets ou l'entrée standard.
 - 🔄 Rappelable pour continuer la lecture d'où elle s'était arrêtée.
-
+- 🔢 Bonus : Lecture simultanée depuis plusieurs descripteurs de fichier et utilisation d'une seul variable static.
 ---
+
+## ⚙️ Compilation
+
+- Pour compiler ce projet get_next_line, utilisez la commande suivante :
+
+```bash
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 *.c
+```
+
+- Remplacez BUFFER_SIZE par la taille de buffer souhaitée.
+- Pour tester la version bonus (lecture depuis plusieurs descripteurs de fichier), compilez avec les fichiers *_bonus.c et get_next_line_bonus.h.
+
 
 ## 🚧 **Prototype**
 
 ```c
 char *get_next_line(int fd);
 ```
+---
+
+## 📂 Structure des fichiers
+
+- Le projet est composé des fichiers suivants :
+- get_next_line.c : Contient l'implémentation principale de la fonction.
+- get_next_line_utils.c : Fonctions auxiliaires pour la gestion de la mémoire et des chaînes de caractères.
+- get_next_line_bonus.c et get_next_line_utils_bonus.c : Implémentation pour la version bonus.
+- get_next_line.h : Prototype de la fonction principale.
+- get_next_line_bonus.h : Header spécifique à la version bonus.
+- 
 ---
 ## 🌟 Exemple d’utilisation
 
@@ -43,7 +66,6 @@ int main(int argc, char **argv) {
     int finished = 0;
     int i;
 
-    // Ouvrir les fichiers
     for (i = 1; i < argc; i++) {
         fds[i - 1] = open(argv[i], O_RDONLY);
         if (fds[i - 1] < 0) {
@@ -56,7 +78,7 @@ int main(int argc, char **argv) {
     while (!finished) {
         finished = 1;
         for (i = 0; i < argc - 1; i++) {
-            if (fds[i] != -1) { // Si le fichier n'est pas encore terminé
+            if (fds[i] != -1) {
                 line = get_next_line(fds[i]);
                 if (line) {
                     printf("File %d: %s", i + 1, line);
