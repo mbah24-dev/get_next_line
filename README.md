@@ -21,10 +21,45 @@ Bienvenue dans le dépôt **get_next_line**, une implémentation élégante et r
 - Pour compiler ce projet get_next_line, utilisez la commande suivante :
 
 ```bash
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 *.c
+compile >>>>>>>>
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=SIZE get_next_line_bonus.* get_next_line_utils_bonus.c test/main.c
+Execute >>>>>>>>
+./a.out tester/file1.txt tester/file2.txt tester/file4.txt tester/file6.txt 
+Output  >>>>>>>>
+Reading files simultaneously:
+File 1: 01234567890123456789012345678901234567890
+File 2: Alone
+File 3: Squelette frileux
+File 4: 42File 1: 1File 2: BY EDGAR ALLAN POE
+File 3: le bruit sec des branches mortes
+File 2: 
+File 3: sous le manteau blanc
+File 2: From childhood's hour I have not been
+File 2: As others were-I have not seen
+File 2: As others saw-I could not bring
+File 2: My passions from a common spring-
+File 2: From the same source I have not taken
+File 2: My sorrow-I could not awaken
+File 2: My heart to joy at the same tone-
+File 2: And all I lov'd-I lov'd alone-
+File 2: Then-in my childhood-in the dawn
+File 2: Of a most stormy life-was drawn
+File 2: From ev'ry depth of good and ill
+File 2: The mystery which binds me still-
+File 2: From the torrent, or the fountain-
+File 2: From the red cliff of the mountain-
+File 2: From the sun that 'round me roll'd
+File 2: In its autumn tint of gold-
+File 2: From the lightning in the sky
+File 2: As it pass'd me flying by-
+File 2: From the thunder, and the storm-
+File 2: And the cloud that took the form
+File 2: (When the rest of Heaven was blue)
+File 2: Of a demon in my view-
+Done reading all files.
 ```
 
-- Remplacez BUFFER_SIZE par la taille de buffer souhaitée.
+- Remplacez SIZE par la taille de buffer souhaitée.
 - Pour tester la version bonus (lecture depuis plusieurs descripteurs de fichier), compilez avec les fichiers *_bonus.c et get_next_line_bonus.h.
 
 
